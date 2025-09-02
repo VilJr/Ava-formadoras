@@ -1,0 +1,25 @@
+ion-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
+  border-radius: 5%;
+  background-color: rgba(4, 23, 51, 0.521);
+  text-align: center;
+  height: 440px;
+  img{
+    margin-top: 5%;
+    border-radius: 50%;
+  }
+}
+ion-card-title{
+  color: aliceblue;
+}
+ion-title{
+  font-size: 22px;
+  line-height: 20px;
+}
+ion-button{
+  color: aliceblue;
+  size: 14px;
+}
