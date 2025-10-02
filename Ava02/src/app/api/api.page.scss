@@ -1,0 +1,23 @@
+ion-toolbar{
+    background-color: rgb(59, 114, 124);
+}
+ion-title{
+    font-family: antique;
+    font-size: 32px;
+}
+.item1{
+    margin-top: 10px;
+    label{
+    background-color: rgb(14, 9, 4);
+    border-radius: 10px;
+    }
+}
+.mybtn{
+    background-color: rgb(41, 29, 14);
+    color: rgb(240, 223, 195);
+    font-size: 17px;
+    border-radius: 10px;
+    width: 150px;
+    margin-left: 100px;
+    margin-top: 30px;
+}

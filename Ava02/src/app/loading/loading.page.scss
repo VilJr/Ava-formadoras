@@ -1,0 +1,59 @@
+.container-centralizado {
+  height: 100%;
+  display: flex;
+  flex-direction: column; // Coloca os itens um em cima do outro
+  justify-content: center;
+  align-items: center;
+  background: rgb(59, 114, 124); // Um fundo branco um pouco mais suave
+}
+
+.logo-animada {
+  max-width: 150px; // Ajuste o tamanho da sua logo
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.titulo-animado {
+  font-size:4em;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  animation: fadeIn 2s ease-in-out;
+}
+
+// Animação simples de fade-in
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.titulo-animado span {
+  position: absolute; /* Remove o elemento do fluxo normal e permite o uso de z-index */
+  z-index: 3;
+  margin-left: -165px;
+  margin-top: -25px;         /* Camada 1 (atrás) */
+
+  font-size:1.5em;
+  font-weight: bold;
+  color: rgb(185, 166, 132);
+  animation: fadeIn 2s ease-in-out; /* Escolha uma cor que combine com seu layout */
+}
+
+
+.titulo-animado .logo-animada {
+  position: absolute; /* Remove o elemento do fluxo normal */
+  z-index: 2;         /* Camada 2 (na frente, pois 2 > 1) */
+
+  /* Ajuste o tamanho do logo conforme necessário */
+  width: 300px; /* Exemplo */
+  height: 175px;
+  margin-left: -60px;
+  margin-top: -50px;
+  color:  rgb(41, 29, 14);
+}

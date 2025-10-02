@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="red">
+    <ion-title><strong>Atlasify</strong><ion-icon name="map-sharp"></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item class="item1" color="red">
+    <ion-input
+      label="Nome do País"
+      labelPlacement="floating"
+      placeholder="Digite o nome aqui"
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="searchCountry()">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="searchCountry()" class="ion-margin-top mybtn" color="red">
+    <ion-icon name="search" slot="start"></ion-icon>
+    <strong>Buscar</strong> 
+  </ion-button>
+
+  <div *ngIf="isLoading" class="ion-text-center ion-padding">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <ion-card *ngIf="foundCountry && !isLoading">
+    <ion-img [src]="foundCountry.flags.svg" alt="Bandeira de {{ foundCountry.name.common }}"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ foundCountry.name.common }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 *ngIf="foundCountry.capital">
+        Capital: {{ foundCountry.capital[0] }}
+      </h2>
+      <h2 *ngIf="!foundCountry.capital">
+        Não possui capital.
+      </h2>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="countryNotFound && !isLoading" class="ion-text-center ion-padding">
+    <h3>País não encontrado.</h3>
+    <p>Tente digitar o nome completo em inglês (ex: Brazil, Germany).</p>
+  </div>
+
+</ion-content>
